@@ -1,0 +1,13 @@
+name: testebigquery
+title: testebigquery
+username:
+account: crotman
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 8284757
+bundleId: 6834664
+url: https://crotman.shinyapps.io/testebigquery/
+when: 1676085929.56863
+lastSyncTime: 1676085929.56863
+asMultiple: FALSE
+asStatic: FALSE
