@@ -1,11 +1,3 @@
-#
-# This is a Shiny web application. You can run the application by clicking
-# the 'Run App' button above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
 
 library(shiny)
 library(tidyverse)
@@ -22,11 +14,18 @@ con <- dbConnect(
     bigrquery::bigquery(),
     project = "bigquerycrotman",
     dataset = "football",
-    billing = "carteira_crotman"
+    billing = "bigquerycrotman"
 )
 
 
 games <- tbl(con, "games") |> 
+    group_by(country) |> 
+    summarise(
+        across(
+            .cols = starts_with("odd"),
+            .fns = mean
+        )
+    ) |> 
     collect()
 
 
